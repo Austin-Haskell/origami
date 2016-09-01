@@ -94,7 +94,7 @@ Using these functions is optional; there are other ways you can proceed with shi
 
 You want your shift to wrap back around to the beginning of the alphabet, so that if you have a rightward shift of 3 from 'z,' you end up back at 'c' and not somewhere in the vast Unicode hinterlands. Depending on how you've set things up, this might be a bit tricky. Consider starting from a base character (e.g., 'a') and using `mod` to ensure you're only shifting over the 26 standard characters of the English alphabet. 
 
-You should include an `unCaesar` function that will decipher your text as well, and we will write tests for these in an upcoming session.
+You should include an `unCaesar` function that will decode your text as well, and we will write tests for these in an upcoming session.
 
 6. At home:
 
@@ -103,3 +103,4 @@ Rewrite `myOr` and `myAny` with folds. :)
 hint: check out `||`
 
 See how they work when given a potentially infinite list, such as `[1..]`
+
