@@ -268,4 +268,3 @@ foldl f acc (x:xs) =  foldl f (f acc x) xs
 - directly calls itself
 - the recursive trip down the spine cannot be stopped
 - left associative
-
