@@ -1,4 +1,4 @@
--- render unto caesar
+{ #- LANGUAGE TemplateHaskell -# }
 module Caesar where
 -- refactor this for better naming, main works this way, altho read is bad and will throw an exception if you ignore its instruction to give it a number. could undoubtedly refactor with maybe etc.
 import Data.Char
