@@ -290,7 +290,18 @@ foldl f acc (x:xs) =  foldl f (f acc x) xs
 fibs = 1 : scanl (+) 1 fibs
 ``` -->
 
-# next time
-- we'll look at Haskell environments ?
-- can someone show off Haskell for Mac?
--
+<!-- newtype All = All { getAll :: Bool }
+        deriving (Eq, Ord, Read, Show, Bounded, Generic)
+
+instance Monoid All where
+        mempty = All True
+        All x `mappend` All y = All (x && y)
+
+-- | Boolean monoid under disjunction ('||').
+newtype Any = Any { getAny :: Bool }
+        deriving (Eq, Ord, Read, Show, Bounded, Generic)
+
+instance Monoid Any where
+        mempty = Any False
+        Any x `mappend` Any y = Any (x || y)
+ -->
