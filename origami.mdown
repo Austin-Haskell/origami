@@ -150,6 +150,12 @@ map :: (a -> b) -> [a] -> [b]
 - obligatory reminder that data structures are (usually) immutable in Haskell :)
 - write `map` (exercise 2)
 
+# `map`
+
+```haskell
+map f (x:xs)  = f x :  map f xs
+```
+
 # And `filter`
 
 ```haskell
