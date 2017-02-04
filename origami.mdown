@@ -6,7 +6,7 @@
 
 # Recursion
 
-- Usually hear "functions that call themselves" 
+- Usually hear "functions that call themselves"
 
 # Other ways to think about it
 
@@ -78,7 +78,7 @@ myHead (x:_) = Right x
 # Either
 
 ```haskell
-data Either a b = Left a | Right b 
+data Either a b = Left a | Right b
 ```
 - like `Maybe` often used to prevent bottoming out
 - provides opportunity here to tell *what* the error was
@@ -173,11 +173,23 @@ filter pred (x:xs)
 
 # Exercise 3 answer
 
-```haskell 
+```haskell
 noDets :: String -> [[Char]]
-noDets = 
+noDets =
  filter (\x -> not (elem x ["the", "a", "an"])) . words
 ```
+# caesar discussion
+- how did you handle spaces, uppercase?
+- DID YOU USE `mod`?
+
+# caesar
+- from Data.Char
+```haskell
+isAlpha :: Char -> Bool
+ord :: Char -> Int
+chr :: Int -> Char
+```
+
 
 # Exercises
 
@@ -274,3 +286,28 @@ foldl f acc (x:xs) =  foldl f (f acc x) xs
 - directly calls itself
 - the recursive trip down the spine cannot be stopped
 - left associative
+
+# More
+- right vs left: can change results when functions are not commutative
+- strict versions: foldl' more useful due to lack of thunk accumulation
+- versions without acc value: foldr1, foldl1 (not safe?)
+- scans WOOT
+<!-- ```haskell
+fibs = 1 : scanl (+) 1 fibs
+``` -->
+
+<!-- newtype All = All { getAll :: Bool }
+        deriving (Eq, Ord, Read, Show, Bounded, Generic)
+
+instance Monoid All where
+        mempty = All True
+        All x `mappend` All y = All (x && y)
+
+-- | Boolean monoid under disjunction ('||').
+newtype Any = Any { getAny :: Bool }
+        deriving (Eq, Ord, Read, Show, Bounded, Generic)
+
+instance Monoid Any where
+        mempty = Any False
+        Any x `mappend` Any y = Any (x || y)
+ -->
