@@ -15,7 +15,7 @@ myAny f (x:xs) = if (f x == True)
 
 myAny' :: (a -> Bool) -> [a] -> Bool
 myAny' f [] = False
-myAny' f xs = foldr (\x -> \y -> f x || y) False xs
+myAny' f xs = foldr (\x -> \y -> ) False xs
 
 newtype Any a = Any { getAny :: Bool } deriving Show
 newtype All a = All { getAll :: Bool } deriving Show
@@ -38,3 +38,5 @@ data Days = Sunday | Monday deriving Show
 data Either a b = 
     Left a 
   | Right b deriving Show
+
+instance Functor (Either a) where
